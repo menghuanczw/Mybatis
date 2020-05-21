@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--注意mybtai plus与mybatis不同的地方是名字空间这里，
+    mybatis plus统一用基类的com.baomidou.springmvc.mapper.system.UserMapper这个类，
+    但是mybatis是用得与本mapping文件相关联的Dao的名称这一点一定要注意-->
+<mapper namespace="my.mapper.AddressMapper">
+    <resultMap id="addressMap" type="my.entity.Address">
+        <id column="ID" property="id"/>
+        <result column="CITY" property="city"/>
+        <result column="HOUSE_ADDRESS" property="houseAddress"/>
+        <result column="START_DATE" property="startDate"/>
+    </resultMap>
+    <select id="selectAllAddress" resultMap="addressMap">
+        select ID,CITY,HOUSE_ADDRESS,START_DATE from T_ADDRESS
+    </select>
+
+    <insert id="insert" parameterType="my.entity.Address">
+        insert into T_ADDRESS(ID,CITY,HOUSE_ADDRESS,START_DATE) values(#{id},#{city},#{houseAddress},#{startDate})
+    </insert>
+</mapper>

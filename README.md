@@ -1,0 +1,1 @@
+springboot+mybatis 用java类配置SQLSessionFactory

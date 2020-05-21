@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+ datasource:
+   driverClassName: oracle.jdbc.driver.OracleDriver
+   url: jdbc:oracle:thin:@127.0.0.1:1521/ORCL
+   username: scott
+   password: tiger
+logging:
+  level:
+    my.mapper: debug
+
+#pagehelper:
+#  helper-dialect: oracle
+#  params:
+#    count: countSql
+#  reasonable: false
+#  support-methods-arguments: true
